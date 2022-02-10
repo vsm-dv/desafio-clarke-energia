@@ -1,5 +1,3 @@
-![](https://i.imgur.com/xG74tOh.png)
-
 # Desafio Clarke Energia Marketplace
 
 Esta aplicação contém um projeto de plataforma que permite que usuários tenham acesso a dados de fornecedores de energia, para que este possa fazer uma pesquisa a fim de encontrar o melhor custo/benefício para suas necessidades. 
