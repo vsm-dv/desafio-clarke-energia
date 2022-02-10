@@ -6,7 +6,7 @@ Este repositório contém uma aplicação front-end, bem como uma API da qual es
 A primeira foi desenvolvida em ReactJs e subsidiada por layouts do framework Material UI, enquanto a última conta com NodeJs e o framework Express em sua construção.
 Além disso, os dados estão armazenados em um banco de dados estruturado, mais especificamente PostgreSQL.
 
-###Back-end
+### Back-end
 
 Para executar a API, é necessário instalar as dependências na pasta backend do projeto, por meio do comando **npm install**, e em seguida iniciá-la pelo comando **npm run dev**.
 
@@ -34,7 +34,7 @@ A API possui as seguintes rotas e métodos:
 
 **Informações adicionais**: é utilizado o construtor de esquema de validações Yup para validar as informações fornecidas no cadastro de usuários e fornecedores, bem como no login do usuário.
 
-###Front-end
+### Front-end
 
 Para abrir a página no navegador, após iniciar a API no back-end, é necessário instalar as dependências na pasta frontend do projeto, por meio do comando **npm install**, e em seguida iniciá-la pelo comando **npm start**.
 
