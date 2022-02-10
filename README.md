@@ -1,9 +1,9 @@
 # Desafio Clarke Energia Marketplace
 
-Esta aplicação contém um projeto de plataforma que permite que usuários tenham acesso a dados de fornecedores de energia, para que este possa fazer uma pesquisa a fim de encontrar o melhor custo/benefício para suas necessidades. 
+Esta aplicação contém um projeto de plataforma que permite que usuários tenham acesso a dados de fornecedores de energia, para que estes possam fazer uma pesquisa a fim de encontrar o melhor custo/benefício para suas necessidades. 
 
 Este repositório contém uma aplicação front-end, bem como uma API da qual esta consome os dados.
-A primeira foi desenvolvida em ReactJs e subsidiada por layouts do framework Material UI, enquanto a última conta com NodeJs e o framework Express.
+A primeira foi desenvolvida em ReactJs e subsidiada por layouts do framework Material UI, enquanto a última conta com NodeJs e o framework Express em sua construção.
 Além disso, os dados estão armazenados em um banco de dados estruturado, mais especificamente PostgreSQL.
 
 ###Back-end
@@ -25,14 +25,14 @@ A API possui as seguintes rotas e métodos:
 - **/fornecedores**
     -   **método**: POST;
     -   **url**: http://localhost:3333/fornecedores
-    -   **objetivo**: esta rota deve ser disponibilizada não para clientes, e sim para os funcionários responsáveis pela disponibilização de informações sobre fornecedores aos usuários. Para que seja feito o cadastro, devem ser informados os seguintes dados do fornecedor: nome, logotipo, localização (estado), custo por kWh, limite mínimo de kWh, total de clientes e avaliação média dos clientes.
+    -   **objetivo**: esta rota deve ser disponibilizada não para usuários, e sim para os funcionários responsáveis pela disponibilização de informações sobre fornecedores aos primeiros. Para que seja feito o cadastro, devem ser informados os seguintes dados do fornecedor: nome, logotipo, localização (estado), custo por kWh, limite mínimo de kWh, total de clientes e avaliação média dos clientes.
     <br>
 - **/fornecedores**
     -   **método**: GET;
     -   **url**: http://localhost:3333/fornecedores
-    -   **objetivo**: obter os dados mencionados acima sobre fornecedores cadastrados, para que o usuário possa fazer uma busca sobre quais fornecedores são capazes de atender às suas demandas, e o custo do kW/h;
+    -   **objetivo**: obter os dados mencionados acima sobre fornecedores cadastrados, para que o usuário possa fazer uma busca sobre quais fornecedores são capazes de atender às suas demandas, bem como os valores de fornecimento de energia (custo do kW/h);
 
-Informações adicionais: é utilizado o construtor de esquema de validações Yup para validar as informações fornecidas no cadastro de usuários e fornecedores, bem como no login do usuário.
+**Informações adicionais**: é utilizado o construtor de esquema de validações Yup para validar as informações fornecidas no cadastro de usuários e fornecedores, bem como no login do usuário.
 
 ###Front-end
 
@@ -41,12 +41,13 @@ Para abrir a página no navegador, após iniciar a API no back-end, é necessár
 A aplicação no front-end foi construída a partir de layouts e componentes do framework Material UI, e possui três rotas:
 <br>
 
--   **/ ou /login**
-    -   ambas as rotas permitem que o usuário acesse a página de login. A segunda rota é chamada caso o usuário tente acessar uma rota protegida sem estar autenticado;
-    <br>
--   **/home**
-    -   nesta rota, o usuário terá acesso a uma tabela com todos os fornecedores disponíveis. No input acima desta tabela, o usuário informará sua demanda de energia, e ao clicar no botão "Pesquisar", os resultados desta pesquisa serão exibidos em uma segunda tabela.
-    -   no canto superior direito da tela há uma imagem que representa a função de logout, e ao clicar nesta, o usuário sai do sistema.
-    <br>
 -   **/sign-up**
     -   a rota de cadastro permite que um novo usuário seja cadastrado. Caso este informe um email já cadastrado, ou qualquer um dos campos nome, e-mail ou senha não estiverem preenchidos, não será possível concluir o cadastro, e aparecerá no canto superior direito da tela uma mensagem de erro.
+    <br>
+-   **/ ou /login**
+    -   ambas as rotas permitem que o usuário acesse a página de login. A segunda rota é chamada caso o usuário tente acessar a rota protegida /home sem estar autenticado;
+    <br>
+-   **/home**
+    -   nesta rota, após se autenticar, o usuário terá acesso a uma tabela com todos os fornecedores disponíveis. No input acima desta tabela, o usuário informará sua demanda de energia, e ao clicar no botão "Pesquisar", os resultados desta pesquisa serão exibidos em uma segunda tabela.
+    -   no canto superior direito da tela há uma imagem que representa a função de logout, e ao clicar nesta, o usuário sai do sistema.
+    <br>
