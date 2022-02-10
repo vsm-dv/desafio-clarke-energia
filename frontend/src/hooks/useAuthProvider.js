@@ -2,6 +2,7 @@ import { useLocalStorage } from "react-use";
 
 function AuthProvider() {
   const [token, setToken, removeToken] = useLocalStorage('cachedToken', null);
+  const [errorLoginMessage, setErrorLoginMessage, removeErrorLoginMessage] = useLocalStorage('errorLoginMessage', null);
 
   async function login(email, password, callback) {
     const body = {
@@ -19,6 +20,10 @@ function AuthProvider() {
       });
 
       const data = await response.json();
+      if (!response.ok) {
+        setErrorLoginMessage(data);
+        return;
+      }
       setToken(data.token);
       callback();
     } catch (error) {
@@ -32,7 +37,7 @@ function AuthProvider() {
   }
 
   return {
-    token, setToken, login, logout
+    token, setToken, login, logout, errorLoginMessage, setErrorLoginMessage, removeErrorLoginMessage
   }
 }
 

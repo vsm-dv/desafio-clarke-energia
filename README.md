@@ -45,7 +45,7 @@ A aplicação no front-end foi construída a partir de layouts e componentes do 
     -   a rota de cadastro permite que um novo usuário seja cadastrado. Caso este informe um email já cadastrado, ou qualquer um dos campos nome, e-mail ou senha não estiverem preenchidos, não será possível concluir o cadastro, e aparecerá no canto superior direito da tela uma mensagem de erro.
     <br>
 -   **/ ou /login**
-    -   ambas as rotas permitem que o usuário acesse a página de login. A segunda rota é chamada caso o usuário tente acessar a rota protegida /home sem estar autenticado;
+    -   ambas as rotas permitem que o usuário acesse a página de login. A segunda rota é chamada caso o usuário tente acessar a rota protegida /home sem estar autenticado. Caso este informe um email inválido ou não cadastrado, ou qualquer um dos campos e-mail ou senha não estiverem preenchidos, não será possível fazer login, e aparecerá no canto superior direito da tela uma mensagem de erro.
     <br>
 -   **/home**
     -   nesta rota, após se autenticar, o usuário terá acesso a uma tabela com todos os fornecedores disponíveis. No input acima desta tabela, o usuário informará sua demanda de energia, e ao clicar no botão "Pesquisar", os resultados desta pesquisa serão exibidos em uma segunda tabela.

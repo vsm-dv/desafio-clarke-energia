@@ -10,8 +10,9 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import background from '../../assets/background.jpg';
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import ToastAlert from '../../compontents/ToastAlert';
 
 function Copyright(props) {
   return (
@@ -33,6 +34,16 @@ export default function SignInSide() {
   const [inputsLogin, setInputsLogin] = useState(emptyInputsLogin);
   const authentication = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      authentication.setErrorLoginMessage(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timeout);
+    }
+  }, [authentication.errorLoginMessage])
 
   function goTo(path) {
     navigate(path);
@@ -111,8 +122,10 @@ export default function SignInSide() {
               <p>Não tem cadastro? <NavLink to='/sign-up'>Clique aqui</NavLink></p>
               <Copyright sx={{ mt: 5 }} />
             </Box>
+
           </Box>
         </Grid>
+        {authentication.errorLoginMessage && <ToastAlert errorMessage={authentication.errorLoginMessage} />}
       </Grid>
     </ThemeProvider>
   );
